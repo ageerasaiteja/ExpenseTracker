@@ -1,0 +1,39 @@
+.alert {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.success,
+.error,
+.warn {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    justify-content: center;
+    gap: 8px;
+}
+
+.success {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #2fbf71;
+}
+
+.error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #ef4444;
+}
+
+.warn {
+    background: #FFFBEB;
+    color: #B45309;
+    border: 1px solid #F59E0B;
+}
+
+.alert p{
+    font-size: 0.9rem;
+}
