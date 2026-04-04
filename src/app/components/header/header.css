@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+
+header a{
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+header .actionButtons {
+    display: flex;
+    gap:20px;
+}
+
+.actionButtons button{
+    padding: 8px 18px;
+    background-color: #2563EB;
+    color: white;
+    outline: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2 ease-in-out;
+}
+
+.actionButtons button:hover{
+    transform: scale(1.02);
+    background-color: #1D4ED8;
+}
+
+.actionButtons button a{
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.02rem;
+}
+
+@media screen and (max-width: 600px) {
+    header{
+        padding: 1rem 1rem;
+        justify-content: center;
+    }
+    header .actionButtons{
+        display: none;
+    }
+}

@@ -1,0 +1,13 @@
+<header>
+    <p><a routerLink="/">Expense Tracker</a></p>
+    <div class="actionButtons">
+        @if(userLogin){
+            <button><a routerLink="/dashboard">Dashboard</a></button>
+            <button><a routerLink="/logout">Logout</a></button>
+        } @else {
+            <button><a routerLink="login">Login</a></button>
+            <button><a routerLink="/signup">SignUp</a></button>
+        }
+    </div>
+</header>
+
