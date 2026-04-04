@@ -1,0 +1,17 @@
+<div class="login">
+    <app-header [userLogin]="loginService.userLogin"/>
+    <p class="header">
+        Login
+    </p>
+    <div class="inputs">
+        <div class="username">
+            <label for="username">Username</label>
+            <input [class.error]="loginService.userError" (input)="loginService.clearError()" type="text" placeholder="Enter Username" id="username" [(ngModel)]="username">
+        </div>
+        <div class="password">
+            <label for="password">Password</label>
+            <input type="password" [class.error]="loginService.passwordError" (input)="loginService.clearError()"  placeholder="Enter Password" id="password" [(ngModel)]="password">
+        </div>
+        <button (click)="submit()">Login</button>
+    </div>
+</div>
