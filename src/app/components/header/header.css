@@ -17,7 +17,7 @@ header .actionButtons {
     gap:20px;
 }
 
-.actionButtons button{
+.actionButtons a{
     padding: 8px 18px;
     background-color: #2563EB;
     color: white;
@@ -26,18 +26,13 @@ header .actionButtons {
     border: none;
     cursor: pointer;
     transition: transform 0.2 ease-in-out;
-}
-
-.actionButtons button:hover{
-    transform: scale(1.02);
-    background-color: #1D4ED8;
-}
-
-.actionButtons button a{
-    color: white;
-    text-decoration: none;
     font-weight: 400;
     font-size: 1.02rem;
+}
+
+.actionButtons a:hover{
+    transform: scale(1.02);
+    background-color: #1D4ED8;
 }
 
 @media screen and (max-width: 600px) {

@@ -2,6 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { Header } from "../../components/header/header";
 import { UserService } from '../../services/userService';
 import { RouterLink } from "@angular/router";
+import { AuthService } from '../../services/authService';
 
 @Component({
   selector: 'app-home',
@@ -11,5 +12,5 @@ import { RouterLink } from "@angular/router";
 })
 export class Home {
   userService: UserService = inject(UserService)
-  userLogin = this.userService.getUserLogin()
+  authService: AuthService = inject(AuthService)
 }

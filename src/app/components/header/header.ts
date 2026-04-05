@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { UserService } from '../../services/userService';
+import { AuthService } from '../../services/authService';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +10,6 @@ import { RouterLink } from "@angular/router";
   styleUrl: './header.css',
 })
 export class Header {
-  @Input({required:true}) userLogin!:boolean;
+  userService:UserService = inject(UserService);
+  authService:AuthService = inject(AuthService);
 }

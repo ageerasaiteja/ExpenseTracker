@@ -1,12 +1,12 @@
 <header>
     <p><a routerLink="/">Expense Tracker</a></p>
     <div class="actionButtons">
-        @if(userLogin){
-            <button><a routerLink="/dashboard">Dashboard</a></button>
-            <button><a routerLink="/logout">Logout</a></button>
+        @if(userService.getUserLogin()()){
+            <a routerLink="/dashboard">Dashboard</a>
+            <a routerLink="/" (click)="authService.logout()">Logout</a>
         } @else {
-            <button><a routerLink="login">Login</a></button>
-            <button><a routerLink="/signup">SignUp</a></button>
+            <a routerLink="/login">Login</a>
+            <a routerLink="/signup">SignUp</a>
         }
     </div>
 </header>

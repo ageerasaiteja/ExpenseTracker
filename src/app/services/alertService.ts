@@ -1,11 +1,19 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AlertService {
-  status = signal("none");
-  message = signal("none")
+  private status = signal("none");
+  private message = signal("none");
+
+  getMessage(): WritableSignal<string>{
+    return this.message
+  }
+
+  getStatus(): WritableSignal<string>{
+    return this.status
+  }
 
   private cleanUp(time: number){
     setTimeout(() => {

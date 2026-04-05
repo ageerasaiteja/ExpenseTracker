@@ -24,6 +24,7 @@
     justify-content: flex-start;
     display: block;
     margin-top: 20px;
+    margin-bottom: 5px;
     font-size: 1.2rem;
     color: #1D4ED8;
 }
@@ -31,7 +32,6 @@
 .login .inputs input{
     width: 300px;
     padding: 10px;
-    margin-top: 5px;
     border: 1px solid #3B82F6;
     border-radius: 4px;
     font-size: 1.05rem;
@@ -64,4 +64,16 @@
 .login .inputs input.error{
     border: 1px solid red;
     box-shadow: 0 0 0 1px red;
+}
+
+.pinput{
+    position: relative;
+}
+
+.password svg{
+    position: absolute;
+    cursor: pointer;
+    top:50%;
+    right: 15px;
+    transform: translateY(-50%);
 }

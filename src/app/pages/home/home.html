@@ -1,17 +1,17 @@
 <div class="home">
-    <app-header [userLogin]="userLogin"></app-header>
+    <app-header></app-header>
     <div class="body">
         <p class="heading">
             Manage your Finances effortlessly
         </p>
         <p>Create an account, record your daily expenses, and monitor your balance in real time. With categorized spending and visual insights like charts, clearly understand where your money goes.</p>
         <div class="actionButtons">
-            @if(userLogin){
-                <button><a routerLink="/dashboard">Dashboard</a></button>
-                <button><a routerLink="/logout">Logout</a></button>
+            @if(userService.getUserLogin()()){
+                <a routerLink="/dashboard">Dashboard</a>
+                <a (click)="authService.logout()">Logout</a>
             } @else {
-                <button><a routerLink="login">Login</a></button>
-                <button><a routerLink="/signup">SignUp</a></button>
+                <a routerLink="/login">Login</a>
+                <a routerLink="/signup">SignUp</a>
             }
         </div>
     </div>
