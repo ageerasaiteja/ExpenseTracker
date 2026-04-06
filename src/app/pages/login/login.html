@@ -4,14 +4,14 @@
     <div class="inputs">
         <div class="username">
             <label for="username">Username</label>
-            <input [class.error]="loginService.userError" (input)="loginService.clearError()" type="text"
+            <input [class.error]="userError" (input)="clearError()" type="text"
                 placeholder="Enter Username" id="username" [(ngModel)]="username" autocomplete="username" />
         </div>
         <div class="password">
             <label for="password">Password</label>
             <div class="pinput">
-                <input [type]="showPassword() ? 'text' : 'password'" [class.error]="loginService.passwordError"
-                    (input)="loginService.clearError()" (keydown)="keydown($event)" placeholder="Enter Password"
+                <input [type]="showPassword() ? 'text' : 'password'" [class.error]="passwordError"
+                    (input)="clearError()" (keydown)="keydown($event)" placeholder="Enter Password"
                     id="password" [(ngModel)]="password" />
                 @if (showPassword()) {
                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
