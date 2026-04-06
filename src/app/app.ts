@@ -1,10 +1,10 @@
 import { Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Alert } from "./components/alert/alert";
+import { Alerts } from "./components/alerts/alerts";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Alert],
+  imports: [RouterOutlet, Alerts],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

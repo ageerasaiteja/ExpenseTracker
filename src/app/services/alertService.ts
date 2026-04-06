@@ -1,41 +1,38 @@
-import { Injectable, signal, WritableSignal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { AlertType } from '../datatypes/alertType';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AlertService {
-  private status = signal("none");
-  private message = signal("none");
+  private alerts = signal<AlertType[]>([]);
 
-  getMessage(): WritableSignal<string>{
-    return this.message
+  private addAlert(alert: AlertType, time: number) {
+    const currentAlerts = this.alerts();
+    if (currentAlerts) {
+      this.alerts.set([...currentAlerts, alert]);
+      setTimeout(() => {
+        const updatedAlerts = this.alerts().filter((a) => a !== alert);
+        this.alerts.set(updatedAlerts);
+      }, time);
+    } else {
+      this.alerts.set([alert]);
+    }
   }
 
-  getStatus(): WritableSignal<string>{
-    return this.status
+  getAlerts() {
+    return this.alerts;
   }
-
-  private cleanUp(time: number){
-    setTimeout(() => {
-      this.status.set("none")
-      this.message.set("none")
-    }, time);
-  }
+  
   error(message:string, time:number){
-    this.status.set("error");
-    this.message.set(message);
-    this.cleanUp(time);
+    this.addAlert({type:"error", message:message}, time);
   }
 
   success(message:string, time:number){
-    this.status.set("success");
-    this.message.set(message);
-    this.cleanUp(time);
+    this.addAlert({type:"success", message:message}, time)
   }
 
   warn(message:string, time:number){
-    this.status.set("warn");
-    this.message.set(message);
-    this.cleanUp(time);
+    this.addAlert({type:"warn", message:message}, time)
   }
 }
