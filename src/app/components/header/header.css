@@ -5,42 +5,80 @@ header {
     padding: 1rem 3rem;
 }
 
-header a{
+header p a{
     color: #2563EB;
     text-decoration: none;
     font-weight: 800;
     font-size: 1.5rem;
 }
 
-header .actionButtons {
-    display: flex;
-    gap:20px;
-}
-
-.actionButtons a{
-    padding: 8px 18px;
-    background-color: #2563EB;
-    color: white;
-    outline: none;
-    border-radius: 6px;
-    border: none;
+header .userActions svg{
+    height: 50px;
+    fill: #000000;
     cursor: pointer;
-    transition: transform 0.2 ease-in-out;
-    font-weight: 400;
-    font-size: 1.02rem;
+    padding: 10px 0px;
 }
 
-.actionButtons a:hover{
-    transform: scale(1.02);
-    background-color: #1D4ED8;
+header .userActions{
+    position: relative;
+    display: flex;
+    align-items: center;
 }
+
+header .userActions:hover .data,
+header .userActions:focus-within .data{
+    display: flex;
+}
+
+header .userActions .data{
+    position: absolute;
+    right: 0;
+    top: calc(100% + -2px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    background-color: #E5E7EB;
+    padding: 10px 10px 0 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+header .userActions .data::after{
+    height: 10px;
+    width: 10px;
+    content: "";
+    background-color: inherit;
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    transform: rotate(45deg);
+}
+
+.userActions .data p{
+    text-wrap: nowrap;
+    font-size: 16px;
+    border-bottom: 2px solid black;
+}
+
+.userActions .data .actions{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    gap: 4px;
+}
+
+.data .actions a{
+    text-decoration: none;
+    color: #3B82F6;
+    font-size: 16px;
+    font-weight: 600;
+}
+
 
 @media screen and (max-width: 600px) {
     header{
-        padding: 1rem 1rem;
-        justify-content: center;
-    }
-    header .actionButtons{
-        display: none;
+        padding: 0.5rem 1rem;
     }
 }

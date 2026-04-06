@@ -4,7 +4,11 @@
         <p class="heading">
             Manage your Finances effortlessly
         </p>
-        <p>Create an account, record your daily expenses, and monitor your balance in real time. With categorized spending and visual insights like charts, clearly understand where your money goes.</p>
+        @if(userService.getUserLogin()()){
+            <p>Welcome back, {{userService.getUsername()()}}! Dive into your personalized dashboard to track and manage your expenses with ease.</p>
+        } @else {
+            <p>Create an account, record your daily expenses, and monitor your balance in real time. With categorized spending and visual insights like charts, clearly understand where your money goes.</p>
+        }
         <div class="actionButtons">
             @if(userService.getUserLogin()()){
                 <a routerLink="/dashboard">Dashboard</a>
