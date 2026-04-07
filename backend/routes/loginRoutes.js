@@ -9,4 +9,5 @@ router.post("/", (req, res)=>{
 router.post("/token", (req, res)=>{
     loginService.loginToken(req.body, res)
 })
+
 module.exports = router

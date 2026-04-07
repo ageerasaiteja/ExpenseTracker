@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { UserService } from './userService';
 import { AlertService } from './alertService';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -57,7 +58,7 @@ export class AuthService {
       password: password,
     };
     return new Promise((resolve) => {
-      fetch('/api/login', {
+      fetch(environment.apiUrl + '/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -78,7 +79,7 @@ export class AuthService {
   loginToken(token: string): Promise<[boolean, string, string]> {
     const payload = { token: token };
     return new Promise((resolve) => {
-      fetch('/api/login/token', {
+      fetch(environment.apiUrl + '/api/login/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
